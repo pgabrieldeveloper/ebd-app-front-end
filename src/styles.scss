@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@use "src/config-css/variables";
+@use "src/config-css/rem-calc";
+@use "src/config-css/btn";
+@use "src/config-css/reset";
+
+html {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
+
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+main {
+  max-width: rem-calc.rem-calc(600);
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (max-width: 420px) {
+    max-width: rem-calc.rem-calc(350);
+    font-size: rem-calc.rem-calc(14);
+  }
+}
+.content {
+
+  max-width: rem-calc.rem-calc(600);
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (max-width: 420px) {
+    max-width: rem-calc.rem-calc(350);
+    font-size: rem-calc.rem-calc(14);
+  }
+
+}

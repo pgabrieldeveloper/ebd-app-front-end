@@ -1,0 +1,23 @@
+@use 'rem-calc';
+@use 'variables';
+
+.btn, {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: rem-calc.rem-calc(10) 0;
+  border-radius: rem-calc.rem-calc(10);
+  text-decoration: none;
+
+  &_primary {
+    color: var(--branco);
+    background: var(--primary-color);
+
+
+  }
+  &_secondary {
+    color: var(--branco);
+    background-color: var(--secondary-color);
+  }
+}
