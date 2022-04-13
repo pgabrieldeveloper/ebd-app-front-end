@@ -2,13 +2,13 @@
     <a [routerLink]="['/aulas']" >
     <div class="card" *ngFor="let classe of classes">
       <h2>
-        {{classe.name}}
+        {{classe.nome}}
       </h2>
       <div class="info">
         <p>
           Quantidade:
         </p>
-        <p>{{classe.number}}</p>
+        <p>{{classe.nrAlunos}}</p>
       </div>
     </div>
     </a>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {EbdService} from "../../../services/ebd.service";
+import Classes from "../../../services/models/Classes";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-list-classes',
@@ -7,11 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListClassesComponent implements OnInit {
 
-  classes: Array<{name:string, number:number}> = [{name:"jovens",number:40},{name:"senhores",number:4}];
+  classes: Array<Classes> = [];
 
-  constructor() { }
+  constructor(
+    private service:EbdService,
+    private toastr: ToastrService
+              ) { }
 
   ngOnInit(): void {
+    this.service.pegarTodasAsClasses().subscribe({next:res => {
+      console.log(res);
+      this.classes = res
+      }, error:err => {
+      this.toastr.error("Não foi possivel carregar as classes" + err, "Error");
+    }
+    });
+
   }
 
 }

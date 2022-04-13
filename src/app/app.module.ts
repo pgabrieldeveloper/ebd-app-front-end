@@ -11,6 +11,9 @@ import { ChamadaComponent } from './pages/ebd/chamada/chamada.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     RegisterComponent
   ],
   imports: [
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule

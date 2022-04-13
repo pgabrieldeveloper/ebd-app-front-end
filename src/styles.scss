@@ -2,6 +2,7 @@
 @use "src/config-css/rem-calc";
 @use "src/config-css/btn";
 @use "src/config-css/reset";
+@use '~ngx-toastr/toastr';
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -18,7 +19,7 @@ main {
   margin: 0 auto;
   box-sizing: border-box;
 
-  @media (max-width: 420px) {
+  @media (max-width: 640px) {
     max-width: rem-calc.rem-calc(350);
     font-size: rem-calc.rem-calc(14);
   }
