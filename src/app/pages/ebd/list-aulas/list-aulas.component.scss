@@ -1,0 +1,39 @@
+@use "src/config-css/variables";
+@use "src/config-css/rem-calc";
+main {
+  section {
+    border-radius: rem-calc.rem-calc(10);
+    padding: rem-calc.rem-calc(10);
+    background-color:  var(--branco);
+    h2 {
+      text-align: center;
+    }
+
+    .card-corpo{
+      margin-bottom: rem-calc.rem-calc(10);
+      border-bottom: 0.5px solid black;
+      display: flex;
+      justify-content: space-between;
+      .card-info{
+        display: flex;
+        flex-direction: column;
+      }
+      button{
+        background-color: var(--secondary-color);
+        color: var(--branco);
+
+        border-radius: rem-calc.rem-calc(0);
+      }
+    }
+
+  }
+  button{
+    border-radius: rem-calc.rem-calc(10);
+    border: none;
+    padding: rem-calc.rem-calc(10);
+    margin-top: rem-calc.rem-calc(10);
+    width: 100%;
+  }
+
+
+}
