@@ -8,6 +8,9 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ListAulasComponent } from './pages/ebd/list-aulas/list-aulas.component';
 import { ListAlunosComponent } from './pages/ebd/list-alunos/list-alunos.component';
 import { ChamadaComponent } from './pages/ebd/chamada/chamada.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,11 +19,15 @@ import { ChamadaComponent } from './pages/ebd/chamada/chamada.component';
     HeaderComponent,
     ListAulasComponent,
     ListAlunosComponent,
-    ChamadaComponent
+    ChamadaComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

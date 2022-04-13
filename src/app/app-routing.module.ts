@@ -4,12 +4,16 @@ import {ListClassesComponent} from "./pages/ebd/list-classes/list-classes.compon
 import {ListAulasComponent} from "./pages/ebd/list-aulas/list-aulas.component";
 import {ListAlunosComponent} from "./pages/ebd/list-alunos/list-alunos.component";
 import {ChamadaComponent} from "./pages/ebd/chamada/chamada.component";
+import {LoginComponent} from "./pages/auth/login/login.component";
+import {RegisterComponent} from "./pages/auth/register/register.component";
 
 const routes: Routes = [
   {path:"classes",component:ListClassesComponent},
   {path:"aulas",component:ListAulasComponent},
   {path:"alunos",component:ListAlunosComponent},
-  {path:"chamada",component:ChamadaComponent}
+  {path:"chamada",component:ChamadaComponent},
+  {path:"login", component:LoginComponent},
+  {path:"cadastro",component:RegisterComponent}
 ];
 
 @NgModule({

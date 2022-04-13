@@ -1,0 +1,21 @@
+<main>
+  <form [formGroup]="cadastroForm">
+    <label for="">Nome</label>
+    <input type="email" formControlName="nome">
+    <label for="">Email</label>
+    <input type="email" formControlName="email">
+    <label for="">Password</label>
+    <input type="text" formControlName="password">
+    <label for="">confirme o password</label>
+    <input type="text" formControlName="password">
+    <label for="">Permissão</label>
+    <select formControlName="permissoes" >
+      <option value="0" disabled>Selecione</option>
+      <option value="1">ADM</option>
+      <option value="2">AJUDANDE DE CLASSE</option>
+    </select>
+
+    <button (click)="cadastar()" class="btn_secondary" >cadastrar</button>
+  </form>
+</main>
+

@@ -1,0 +1,27 @@
+@use "src/config-css/rem-calc";
+@use "src/config-css/variables";
+main {
+  background-color: var(--branco);
+  padding: rem-calc.rem-calc(20);
+  border-radius: rem-calc.rem-calc(10);
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc.rem-calc(10);
+    width: 100%;
+    input{
+      padding: rem-calc.rem-calc(5);
+    }
+    select {
+      padding: rem-calc.rem-calc(5);
+
+    }
+    button {
+      border: none;
+
+      padding: rem-calc.rem-calc(5);
+      width: 100%;
+    }
+    margin: 0 auto;
+  }
+}

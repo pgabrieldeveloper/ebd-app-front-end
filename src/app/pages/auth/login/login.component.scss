@@ -1,0 +1,42 @@
+@use "src/config-css/rem-calc";
+@use "src/config-css/variables";
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--branco);
+  padding: rem-calc.rem-calc(20);
+  border-radius: rem-calc.rem-calc(10);
+  min-width: 220px;
+
+
+  form {
+
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input{
+      padding: rem-calc.rem-calc(5);
+      width: 100%;
+    }
+    a{
+      padding: rem-calc.rem-calc(5);
+      text-decoration: none;
+
+      width: 100%;
+      text-align: center;
+    }
+    a:hover{
+      color: var(--branco);
+    }
+    button {
+      border: none;
+      padding: rem-calc.rem-calc(5);
+      width: 100%;
+    }
+  }
+}
