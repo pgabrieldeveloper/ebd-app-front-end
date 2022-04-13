@@ -1,0 +1,19 @@
+<main>
+  <section>
+    <div class="form" *ngFor="let aluno of alunos">
+      <div class="aluno-card">
+        <p>{{aluno.nome}}</p>
+        <img [src]="aluno.ft" alt="Foto do aluno">
+      </div>
+      <div class="form-card">
+        <label><span>Presente</span> <input type="checkbox"></label>
+        <label> <span>Biblia</span> <input type="checkbox"></label>
+        <label> <span>Revista</span> <input type="checkbox"></label>
+      </div>
+    </div>
+
+  </section>
+  <button class="btn btn_secondary">Realizar chamada</button>
+
+</main>
+
