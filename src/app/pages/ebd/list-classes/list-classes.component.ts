@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListClassesComponent implements OnInit {
 
+  classes: Array<{name:string, number:number}> = [{name:"jovens",number:40},{name:"senhores",number:4}];
+
   constructor() { }
 
   ngOnInit(): void {

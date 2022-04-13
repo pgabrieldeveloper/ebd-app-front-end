@@ -1,0 +1,33 @@
+@use "src/config-css/rem-calc";
+@use "src/config-css/variables";
+a{
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.card {
+  margin: rem-calc.rem-calc(10);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 10px ;
+  background-color: var(--branco);
+  padding: rem-calc.rem-calc(10);
+
+
+  h2{
+    border-radius: 10px 10px 0 0 ;
+    margin-bottom: rem-calc.rem-calc(5);
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      color: var(--primary-color);
+    }
+  }
+
+}
+
