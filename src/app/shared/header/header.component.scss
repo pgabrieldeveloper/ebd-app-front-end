@@ -1,0 +1,12 @@
+@use "src/config-css/rem-calc";
+@use "src/config-css/variables";
+
+header{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: rem-calc.rem-calc(20) 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-style: italic;
+}
