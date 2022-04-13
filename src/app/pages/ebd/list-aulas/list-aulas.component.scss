@@ -3,7 +3,7 @@
 main {
   section {
     border-radius: rem-calc.rem-calc(10);
-    padding: rem-calc.rem-calc(10);
+    padding: rem-calc.rem-calc(15);
     background-color:  var(--branco);
     h2 {
       text-align: center;
@@ -18,7 +18,7 @@ main {
         display: flex;
         flex-direction: column;
       }
-      button{
+      a{
         background-color: var(--secondary-color);
         color: var(--branco);
 
