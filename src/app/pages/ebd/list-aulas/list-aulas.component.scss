@@ -35,5 +35,34 @@ main {
     width: 100%;
   }
 
+  .modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 640px;
+    height: 250px;
+    width: 300px;
+    padding: rem-calc.rem-calc(25);
+    background: rgba(0,0,0,0.5);
+    margin: 0 auto;
+    justify-content: space-around;
+
+    .modal-inputs{
+
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+      input{
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+
+  }
+
+
+
 
 }

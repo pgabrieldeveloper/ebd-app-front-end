@@ -1,16 +1,21 @@
 <main>
-    <a [routerLink]="['/aulas']" >
-    <div class="card" *ngFor="let classe of classes">
-      <h2>
-        {{classe.nome}}
-      </h2>
-      <div class="info">
-        <p>
-          Quantidade:
-        </p>
-        <p>{{classe.nrAlunos}}</p>
+
+    <div *ngFor="let classe of classes">
+      <div>
+        <a class="card" [routerLink]="['/aulas', classe.id]">
+        <h2>
+          {{classe.nome}}
+        </h2>
+        <div class="info">
+          <p>
+            Quantidade:
+          </p>
+          <p>{{classe.nrAlunos}}</p>
+        </div>
+        </a>
       </div>
+
     </div>
-    </a>
+
 </main>
 

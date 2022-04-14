@@ -1,22 +1,34 @@
 <main class="content">
   <section>
     <h2>Lições</h2>
-
-    <div class="card-corpo" *ngFor="let n of [1,2,3]">
+    <div class="card-corpo" *ngFor="let aula of aulas">
       <div class="card-info">
-      <p>
-        Lição: Agua em vinho.
+      <p class="">
+        Lição: {{aula.nome}}.
       </p>
-      <p>Data: 24/10/1999</p>
+      <p>Data: {{aula.dtAula | date:'dd/MM/yyyy'}}</p>
       <p>Professor:</p>
       </div>
       <div>
         <a class="btn btn_secondary" [routerLink]="['/chamada']">Realizar Chamada</a>
       </div>
     </div>
-
   </section>
-  <button (click)="teste()" class="btn, btn_secondary">Criar nova aula</button>
+  <button (click)="openModal()" class="btn, btn_secondary">Criar nova aula</button>
+
+  <ng-template [ngIf]="openModalC">
+    <div class="modal">
+      <div class="modal-inputs">
+        <p>Cadastrar nova Aula</p>
+        <input type="text" placeholder="Aula">
+        <input type="text" placeholder="Professor">
+      </div>
+      <div class="modal-button">
+        <button class="btn btn_primary" (click)="cadastrarAula()">Cadastrar Aula</button>
+      </div>
+
+    </div>
+  </ng-template>
 
 </main>
 

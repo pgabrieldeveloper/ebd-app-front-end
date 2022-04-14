@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import Classes from "./models/Classes";
+import {Aulas} from "./models/Aulas";
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,18 @@ export class EbdService {
   }
 
   pegarTodasAsClasses(): Observable<Array<Classes>>{
-    console.log(`${this.baseURL}/classe`)
     return this.http.get<Array<Classes>>(`${this.baseURL}/classe/classe-alunos`).pipe(
       res => res,
       err => err,
     );
   }
+  pegarTodasAulasClasses(cdClasse:number): Observable<Array<Aulas>>{
+    return this.http.get<Array<Aulas>>(`${this.baseURL}/aula/classe/${cdClasse}`,).pipe(
+      res => res,
+      err => err,
+    );
+  }
+
+
 
 }

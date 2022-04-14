@@ -9,7 +9,7 @@ import {RegisterComponent} from "./pages/auth/register/register.component";
 
 const routes: Routes = [
   {path:"classes",component:ListClassesComponent},
-  {path:"aulas",component:ListAulasComponent},
+  {path:"aulas/:id",component:ListAulasComponent},
   {path:"alunos",component:ListAlunosComponent},
   {path:"chamada",component:ChamadaComponent},
   {path:"login", component:LoginComponent},
