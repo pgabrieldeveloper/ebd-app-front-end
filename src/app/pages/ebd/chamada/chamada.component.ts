@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {EbdService} from "../../../services/ebd.service";
+import {ActivatedRoute} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
+import {Aluno} from "../../../services/models/Aluno";
 
 @Component({
   selector: 'app-chamada',
@@ -7,14 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChamadaComponent implements OnInit {
 
-  public alunos : Array<{nome:string, ft:string}> = [
-    {nome:"Debora",ft:"https://aluno.seduc.ce.gov.br/assets/icons/icon-512x512.png"},
-    {nome:"Rebeca",ft:"https://aluno.seduc.ce.gov.br/assets/icons/icon-512x512.png"},
-    {nome:"Gabriel",ft:"https://aluno.seduc.ce.gov.br/assets/icons/icon-512x512.png"}];
+  public alunos : Array<Aluno> = [];
 
-  constructor() { }
+  constructor(
+    private service: EbdService,
+    private params: ActivatedRoute,
+    private toast: ToastrService
+  ) { }
 
   ngOnInit(): void {
+    const id = this.params.snapshot.params['id'];
+    this.service.pegarTodosAlunosClasse(id).subscribe({next: res => {
+      this.alunos = res;
+      }, error: err => {
+      this.toast.error("Erro ao listar os alunos para a chamada", "error");
+      }});
   }
 
 }

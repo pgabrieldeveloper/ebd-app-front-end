@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import Classes from "./models/Classes";
 import {Aulas} from "./models/Aulas";
+import {Aluno} from "./models/Aluno";
 
 @Injectable({
   providedIn: 'root'
@@ -25,13 +26,20 @@ export class EbdService {
       err => err,
     );
   }
-
+  pegarTodosAlunosClasse(cdClasse:number) : Observable<Array<Aluno>> {
+    return this.http.get<Array<Aluno>>(`${this.baseURL}/aluno/aula/${cdClasse}`).pipe(
+      res => res,
+      err => err,
+    );
+  }
   cadastrarAula(aula:Aulas):  Observable<Aulas> {
     return this.http.post<Aulas>(`${this.baseURL}/aula`,aula).pipe(
       res => res,
       err => err,
     );
   }
+
+
 
 
 

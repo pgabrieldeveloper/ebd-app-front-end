@@ -7,10 +7,10 @@
         Lição: {{aula.nome}}.
       </p>
       <p>Data: {{aula.dtAula | date:'dd/MM/yyyy'}}</p>
-      <p>Professor:</p>
+      <p>Professor:{{"nome do professor"}}</p>
       </div>
       <div>
-        <a class="btn btn_secondary" [routerLink]="['/chamada']">Realizar Chamada</a>
+        <a class="btn btn_secondary" [routerLink]="['/chamada', aula.id]">Realizar Chamada</a>
       </div>
     </div>
   </section>
@@ -26,6 +26,7 @@
       </div>
       <div class="modal-button">
         <button class="btn btn_primary" (click)="cadastrarAula()">Cadastrar Aula</button>
+        <button class="btn btn_primary" (click)="fecharModal()">Cancelar</button>
       </div>
 
     </div>

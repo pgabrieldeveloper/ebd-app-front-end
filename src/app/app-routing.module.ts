@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:"classes",component:ListClassesComponent},
   {path:"aulas/:id",component:ListAulasComponent},
   {path:"alunos",component:ListAlunosComponent},
-  {path:"chamada",component:ChamadaComponent},
+  {path:"chamada/:id",component:ChamadaComponent},
   {path:"login", component:LoginComponent},
   {path:"cadastro",component:RegisterComponent}
 ];

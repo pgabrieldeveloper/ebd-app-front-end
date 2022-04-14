@@ -35,7 +35,9 @@ export class ListAulasComponent implements OnInit {
   openModal(){
     this.openModalC = true;
   }
-
+  fecharModal(){
+    this.openModalC = false;
+  }
   cadastrarAula(){
     const aula =  new Aulas(0, this.nomeAula, new Date(), this.id)
     console.log(aula)
