@@ -4,6 +4,15 @@
 @use "src/config-css/reset";
 @use '~ngx-toastr/toastr';
 
+
+
+
+
+
+
+
+
+
 html {
   font-family: 'Roboto', sans-serif;
   background-color: var(--primary-color);
@@ -23,6 +32,18 @@ main {
     max-width: rem-calc.rem-calc(350);
     font-size: rem-calc.rem-calc(14);
   }
+
+  @media screen and (max-width: 500px) {
+    .modal {
+      top: 100px;
+      left: 40px;
+      height: 250px;
+      width: 300px;
+      height: 200px;
+      width: 200px;
+    }
+  }
+
 }
 .content {
 
@@ -33,6 +54,39 @@ main {
   @media (max-width: 420px) {
     max-width: rem-calc.rem-calc(350);
     font-size: rem-calc.rem-calc(14);
+    background-color: #1976d2;
+
   }
 
-}
+
+
+  }
+  .modal {
+
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 50px;
+    left: 690px;
+    height: 250px;
+    width: 300px;
+    padding: rem-calc.rem-calc(25);
+    background: rgba(0,0,0,0.5);
+    margin: 0 auto;
+    justify-content: space-around;
+
+    .modal-inputs{
+
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+      input{
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+
+  }
+
+

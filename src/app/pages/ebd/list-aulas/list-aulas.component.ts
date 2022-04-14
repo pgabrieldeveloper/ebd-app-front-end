@@ -11,8 +11,10 @@ import {Aulas} from "../../../services/models/Aulas";
 
 })
 export class ListAulasComponent implements OnInit {
+  private id: number = 0;
   public aulas:Array<Aulas> = [];
   public openModalC:boolean = false;
+  public nomeAula:string = "";
   constructor(
     private service: EbdService,
     private toastr: ToastrService,
@@ -20,8 +22,8 @@ export class ListAulasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.params.snapshot.params['id'];
-    this.service.pegarTodasAulasClasses(id).subscribe({next: res => {
+     this.id = this.params.snapshot.params['id'];
+      this.service.pegarTodasAulasClasses(this.id).subscribe({next: res => {
       this.aulas = res;
       },
       error: err => {
@@ -35,8 +37,17 @@ export class ListAulasComponent implements OnInit {
   }
 
   cadastrarAula(){
-    this.toastr.success("Aula criada com sucesso", "info");
+    const aula =  new Aulas(0, this.nomeAula, new Date(), this.id)
+    console.log(aula)
     this.openModalC = false;
+    this.service.cadastrarAula(aula).subscribe({next: res => {
+       this.aulas.push(res);
+       this.toastr.success("Aula criada com sucesso", "info");
+      },
+      error: err => {
+        this.toastr.error("Erro ao Cadastrar Aula", "error");
+      }
+    });
   }
 
 

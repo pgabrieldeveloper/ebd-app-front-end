@@ -26,6 +26,13 @@ export class EbdService {
     );
   }
 
+  cadastrarAula(aula:Aulas):  Observable<Aulas> {
+    return this.http.post<Aulas>(`${this.baseURL}/aula`,aula).pipe(
+      res => res,
+      err => err,
+    );
+  }
+
 
 
 }
