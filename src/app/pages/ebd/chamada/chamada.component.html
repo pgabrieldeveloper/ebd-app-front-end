@@ -1,19 +1,27 @@
 <main>
   <section>
-    <div class="form" *ngFor="let aluno of alunos">
+    <div class="form" *ngFor="let aluno of alunos; let i = index">
       <div class="aluno-card">
         <p>{{aluno.nome}}</p>
         <img src="https://aluno.seduc.ce.gov.br/assets/icons/icon-512x512.png" alt="Foto do aluno">
       </div>
       <div class="form-card">
-        <label><span>Presente</span> <input type="checkbox"></label>
-        <label> <span>Biblia</span> <input type="checkbox"></label>
-        <label> <span>Revista</span> <input type="checkbox"></label>
+        <label><span>Presente</span> <input [(ngModel)]="listaPresenca[i].flPresente" type="checkbox"></label>
+        <label><span>Biblia</span> <input [(ngModel)]="listaPresenca[i].flBiblia" type="checkbox"></label>
+        <label><span>Revista</span> <input [(ngModel)]="listaPresenca[i].flRevista" type="checkbox"></label>
       </div>
     </div>
+    <label>
+      Oferta:
+      <input class="input-oferta" type="number" [(ngModel)]="chamada.oferta" name="oferta">
+    </label>
 
   </section>
-  <button class="btn btn_secondary">Realizar chamada</button>
+
+
+
+
+  <button (click)="realizarChamada()" class="btn btn_secondary">Realizar chamada</button>
 
 </main>
 

@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import Classes from "./models/Classes";
 import {Aulas} from "./models/Aulas";
 import {Aluno} from "./models/Aluno";
+import {ChamadaRequest} from "./models/AlunoChamadaRequest";
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,13 @@ export class EbdService {
   }
   cadastrarAula(aula:Aulas):  Observable<Aulas> {
     return this.http.post<Aulas>(`${this.baseURL}/aula`,aula).pipe(
+      res => res,
+      err => err,
+    );
+  }
+
+  realiarChamada(chamada:ChamadaRequest): Observable<void> {
+    return this.http.post<void>(`${this.baseURL}/chamada/realizar-chamada`,chamada).pipe(
       res => res,
       err => err,
     );
